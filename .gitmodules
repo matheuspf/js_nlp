@@ -1,0 +1,3 @@
+[submodule "external/nlpp"]
+	path = external/nlpp
+	url = https://github.com/matheuspf/nlpp
