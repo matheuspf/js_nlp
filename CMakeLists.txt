@@ -27,9 +27,11 @@ add_executable(${lib_name})
 
 target_include_directories(${lib_name} PUBLIC include/js_nlp external/nlpp/include /usr/local/include)
 
-target_sources(${lib_name} PRIVATE src/GradientDescent/GradientDescent.cpp src/Helpers/Helpers.cpp)
+target_sources(${lib_name} PRIVATE src/GradientDescent/GradientDescent.cpp src/Helpers/Helpers.cpp
+                                   src/Helpers/JS_Function.cpp src/LineSearch/Dynamic/Dynamic.cpp
+)
 
-target_compile_options(${lib_name} PUBLIC -std=c++1z -O3 -s WASM=1)
+target_compile_options(${lib_name} PUBLIC -std=c++1z -O3 -s WASM=1 -DNDEBUG)
 
 target_link_libraries(${lib_name} PUBLIC --bind)
 ###
