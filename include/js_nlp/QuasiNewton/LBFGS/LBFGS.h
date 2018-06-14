@@ -10,10 +10,12 @@
 namespace js_nlp
 {
 
-struct LBFGS : public nlpp::LBFGS<nlpp::Vec, nlpp::BFGS_Diagonal, nlpp::DynamicLineSearch<JS_Function>, out::Optimizer>,
+struct LBFGS : public nlpp::LBFGS<nlpp::BFGS_Diagonal, nlpp::DynamicLineSearch<JS_Function>, 
+                                  stop::GradientOptimizer, out::Optimizer>,
                public Optimizer<LBFGS>
 {
-    using Base = nlpp::LBFGS<nlpp::Vec, nlpp::BFGS_Diagonal, nlpp::DynamicLineSearch<JS_Function>, out::Optimizer>;
+    using Base = nlpp::LBFGS<nlpp::BFGS_Diagonal, nlpp::DynamicLineSearch<JS_Function>, 
+                             stop::GradientOptimizer, out::Optimizer>;
 
     LBFGS();
     LBFGS(emscripten::val);

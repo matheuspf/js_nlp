@@ -29,7 +29,7 @@ target_include_directories(${lib_name} PUBLIC include/js_nlp external/nlpp/inclu
 
 target_sources(${lib_name} PRIVATE src/GradientDescent/GradientDescent.cpp src/Helpers/Helpers.cpp
                                    src/Helpers/JS_Function.cpp src/LineSearch/Dynamic/Dynamic.cpp
-                                   src/QuasiNewton/LBFGS/LBFGS.cpp
+                                   src/QuasiNewton/LBFGS/LBFGS.cpp src/Helpers/Optimizer.cpp
 )
 
 target_compile_options(${lib_name} PUBLIC -std=c++1z -O3 -s WASM=1 -DNDEBUG)

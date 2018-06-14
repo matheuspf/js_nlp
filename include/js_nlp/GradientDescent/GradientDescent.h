@@ -9,10 +9,10 @@
 namespace js_nlp
 {
 
-struct GD : public nlpp::GradientDescent<nlpp::DynamicLineSearch<JS_Function>, out::Optimizer>,
+struct GD : public nlpp::GradientDescent<nlpp::DynamicLineSearch<JS_Function>, stop::GradientOptimizer, out::Optimizer>,
             public Optimizer<GD>
 {
-    using Base = nlpp::GradientDescent<nlpp::DynamicLineSearch<JS_Function>, out::Optimizer>;
+    using Base = nlpp::GradientDescent<nlpp::DynamicLineSearch<JS_Function>, stop::GradientOptimizer, out::Optimizer>;
 
     GD();
     GD(emscripten::val);
